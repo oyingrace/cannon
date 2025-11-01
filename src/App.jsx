@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TrustedBy from './components/TrustedBy'
@@ -9,22 +9,11 @@ import ContactUs from './components/ContactUs'
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
 
-const getInitialTheme = () => {
-  const saved = localStorage.getItem('theme')
-  if (saved === 'dark' || saved === 'light') return saved
-  if (typeof window !== 'undefined') {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  }
-  return 'light'
-}
-
 const App = () => {
-  const [theme, setTheme] = useState(getInitialTheme)
-
+  // Ensure light mode is always active
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark')
-    localStorage.setItem('theme', theme)
-  }, [theme])
+    document.documentElement.classList.remove('dark')
+  }, [])
 
   const dotRef = useRef(null)
   const outlineRef = useRef(null)
@@ -59,19 +48,19 @@ const App = () => {
   },[])
 
   return (
-    <div className="relative  bg-white dark:bg-black transition-colors">
+    <div className="relative bg-white">
       <Toaster />
-      <Navbar theme={theme} setTheme={setTheme} />
+      <Navbar />
       <Hero />
       <TrustedBy />
       <Services />
       <OurWork />
-      <Teams />
+     {/*  <Teams /> */}
       <ContactUs />
-      <Footer theme={theme} />
+      <Footer />
 
       {/* Custom Cursor Ring */}
-      <div ref={outlineRef} className="fixed top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999" 
+      <div ref={outlineRef} className="fixed top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999]" 
       style={{transition: 'transform 0.1s ease-out'}}>
       </div>
       {/* Custom Cursor Dot */}

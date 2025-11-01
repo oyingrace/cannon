@@ -9,7 +9,7 @@ const Teams = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-800 dark:text-white"
+      className="flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-800"
     >
       <Title
         title="Meet the team"
@@ -25,7 +25,7 @@ const Teams = () => {
             viewport={{ once: true }}
             
             key={index}
-            className="flex max-sm:flex-col items-center gap-5 p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-xl shadow-gray-100 dark:shadow-white/5 hover:scale-103 transition-all duration-400"
+            className="flex max-sm:flex-col items-center gap-5 p-4 rounded-xl border border-gray-100 bg-white shadow-xl shadow-gray-100 hover:scale-103 transition-all duration-400"
           >
             <img src={team.image} className="w-12 h-12 rounded-full" alt="" />
             <div className="flex-1">

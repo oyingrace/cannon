@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import assets from "../assets/assets";
-import ThemeToggleBtn from "./ThemeToggleBtn";
 import { motion } from "framer-motion";
 
-const Navbar = ({ theme, setTheme }) => {
+const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -11,18 +10,18 @@ const Navbar = ({ theme, setTheme }) => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium bg-white/50 dark:bg-gray-900/70"
+      className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium bg-white/50"
     >
       {/* Logo */}
       <img
-        src={theme === "dark" ? assets.logo_dark : assets.logo}
+        src={assets.logo}
         alt="logo"
-        className="w-32 sm:w-40"
+        className="w-[60px] h-auto"
       />
 
       {/* Sidebar / Menu Links */}
       <div
-        className={`text-gray-700 dark:text-white sm:text-sm fixed sm:static top-0 bottom-0 right-0 h-full sm:h-auto flex flex-col sm:flex-row sm:items-center gap-5 sm:bg-transparent transition-all duration-300
+        className={`text-gray-700 sm:text-sm fixed sm:static top-0 bottom-0 right-0 h-full sm:h-auto flex flex-col sm:flex-row sm:items-center gap-5 sm:bg-transparent transition-all duration-300
           ${sidebarOpen ? "w-60 pl-10 bg-primary text-white pt-20" : "w-0 overflow-hidden sm:w-auto sm:pl-0 sm:pt-0"}`}
       >
         {/* Close Button (Mobile Only) */}
@@ -49,12 +48,9 @@ const Navbar = ({ theme, setTheme }) => {
 
       {/* Right Side Controls */}
       <div className="flex items-center gap-2 sm:gap-4">
-        {/* Theme Toggle */}
-        <ThemeToggleBtn theme={theme} setTheme={setTheme} />
-
         {/* Mobile Menu Button */}
         <img
-          src={theme === "dark" ? assets.menu_icon_dark : assets.menu_icon}
+          src={assets.menu_icon}
           alt="menu"
           onClick={() => setSidebarOpen(true)}
           className="w-8 sm:hidden cursor-pointer"

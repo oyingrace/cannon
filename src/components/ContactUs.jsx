@@ -38,7 +38,7 @@ const ContactUs = () => {
       viewport={{ once: true }}
       transition={{ staggerChildren: 0.2 }}
       id="contact-us"
-      className="flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white"
+      className="flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700"
     >
       <Title
         title="Reach out to us"
@@ -55,7 +55,7 @@ const ContactUs = () => {
       >
         <div className="">
           <p className="mb-2 text-sm font-medium">Your Name</p>
-          <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
+          <div className="flex pl-3 rounded-lg border border-gray-300">
             <img src={assets.person_icon} alt="" />
             <input
               type="text"
@@ -68,7 +68,7 @@ const ContactUs = () => {
         </div>
         <div className="">
           <p className="mb-2 text-sm font-medium">Email ID</p>
-          <div className="flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
+          <div className="flex pl-3 rounded-lg border border-gray-300">
             <img src={assets.email_icon} alt="" />
             <input
               type="text"
@@ -85,7 +85,7 @@ const ContactUs = () => {
             rows={8}
             name="message"
             placeholder="Enter your message"
-            className="w-full p-3 text-sm outline-none rounded-lg border border-gray-300 dark:border-gray-600"
+            className="w-full p-3 text-sm outline-none rounded-lg border border-gray-300"
           />
         </div>
         <button

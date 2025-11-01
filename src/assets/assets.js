@@ -1,4 +1,4 @@
-import logo from './logo.svg'
+import logo from './logo.png'
 import arrow_icon from './arrow_icon.svg'
 import group_profile from './group_profile.png'
 import bgImage1 from './bgImage1.png'
